@@ -62,6 +62,7 @@ namespace PairGenerator
             }
         }
 
+
         public static void saveResultToFile(string fileName, string[] names)
         {
             File.AppendAllLines(fileName, names);
