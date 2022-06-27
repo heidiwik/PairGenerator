@@ -59,5 +59,10 @@ namespace PairGenerator
                 return null;
             }
         }
+
+        public static void writeResultsFile(string[] names, string fileName)
+        {
+            File.WriteAllLinesAsync(fileName, names);
+        }
     }
 }
