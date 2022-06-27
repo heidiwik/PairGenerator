@@ -18,6 +18,8 @@ namespace PairGenerator
             if (names != null)
                 ListPairs(names);
 
+            saveResultToFile(@"C:\Files\Results.txt", names);
+
         }
 
         public static void ListPairs(string[] names)
@@ -58,6 +60,11 @@ namespace PairGenerator
                 Console.WriteLine("Error: File not found ");
                 return null;
             }
+        }
+
+        public static void saveResultToFile(string fileName, string[] names)
+        {
+            File.AppendAllLines(fileName, names);
         }
     }
 }
