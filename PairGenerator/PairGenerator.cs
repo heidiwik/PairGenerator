@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Reflection;
+using System.Threading.Tasks;
 
 namespace PairGenerator
 {
     class PairGenerator
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             Console.WriteLine(" \n** Get pairs for pair programming assignment ** \n\n");
 
@@ -17,6 +17,8 @@ namespace PairGenerator
 
             if (names != null)
                 ListPairs(names);
+
+            await WriteResultsFile(names, path);
 
         }
 
@@ -60,9 +62,9 @@ namespace PairGenerator
             }
         }
 
-        public static void writeResultsFile(string[] names, string fileName)
+        public static async Task WriteResultsFile(string[] names, string fileName)
         {
-            File.WriteAllLinesAsync(fileName, names);
+            await File.WriteAllLinesAsync(fileName, names);
         }
     }
 }
