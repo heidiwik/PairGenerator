@@ -64,11 +64,11 @@ namespace PairGenerator
                 return null;
             }
         }
-
+        //Tosi mitätön muutos
 
         public static async Task WriteResultsFile(string[] names, string path)
         {
-            //todo: write separate files
+            
             await File.WriteAllLinesAsync(path, names);
         }
     }
