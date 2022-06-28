@@ -10,7 +10,13 @@ namespace PairGenerator
     {
         static async Task Main(string[] args)
         {
-            Console.WriteLine(" \n** Get pairs for pair programming assignment ** \n\n");
+
+            Console.WriteLine(" \n** Get pairs for pair programming assignment ** \n\n"); 
+
+            Console.WriteLine(" \n** Get pairs for pair programming assignment ** \n\n"); //Lasselta kommentti moro vaan
+
+            //To-do: If file isn't found, throw exception
+
 
             string path = @"C:\Files\List.txt";
             var names = ReadFile(path);
@@ -19,7 +25,7 @@ namespace PairGenerator
             if (names != null) { 
                 string[] randomNames = ListPairs(names);
 
-                await WriteResultsFile(randomNames, path);
+                await WriteResultsFile(names, path);
             }
         }
 
@@ -53,14 +59,16 @@ namespace PairGenerator
 
                 if (lines.Length == 0)
                 {
-                    Console.WriteLine("Error: No names in file");
+                    //Console.WriteLine("Error: No names in file");
+                    Console.WriteLine("Error: Nothing was found!"); //TÄSSÄ ANNA V. MUUTOKSET.
                     return null;
                 }
                 return lines;
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error: File not found ");
+                //Console.WriteLine("Error: File not found ");
+                Console.WriteLine("Error: CThere is no such file!"); //TÄSSÄ ANNA V. MUUTOKSET.
                 return null;
             }
         }
