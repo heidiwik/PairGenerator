@@ -27,7 +27,7 @@ namespace PairGenerator
                 string[] randomNames = ListPairs(names);
 
                 await WriteResultsFile(names, path);
-            }
+            }//on siis hyvä muistaa, että kun on git pullia tehnyt, niin muistaa refresh painaa myös täällä visual studion puolella, niin voisi jotain saada näkyviin :)
         }
 
         public static string[] ListPairs(string[] names)
