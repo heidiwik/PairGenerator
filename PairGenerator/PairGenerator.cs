@@ -17,8 +17,8 @@ namespace PairGenerator
 
             if (names != null) { 
                 string[] randomNames = ListPairs(names);
-
-                await WriteResultsFile(names, randomNames);
+                //korjasin tämän pathiksi.
+                await WriteResultsFile(randomNames, path);
             }
         }
 
