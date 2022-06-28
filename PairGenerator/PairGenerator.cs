@@ -10,6 +10,7 @@ namespace PairGenerator
     {
         static async Task Main(string[] args)
         {
+            Console.WriteLine("Welcome!");
             Console.WriteLine(" \n** Get pairs for pair programming assignment ** \n\n");
 
             string path = @"C:\Files\List.txt";
