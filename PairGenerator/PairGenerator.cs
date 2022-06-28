@@ -78,6 +78,7 @@ namespace PairGenerator
         {
             //todo: write separate files
             await File.WriteAllLinesAsync(path, names);
+            //Console.WriteLine("Error: File not found ");-AKN
         }
     }
 }
