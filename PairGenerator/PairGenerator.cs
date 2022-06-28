@@ -9,9 +9,15 @@ namespace PairGenerator
     class PairGenerator
     {
         static async Task Main(string[] args)
-        {
-            Console.WriteLine("Welcome!");
-            Console.WriteLine(" \n** Get pairs for pair programming assignment ** \n\n");
+
+        { // miten mä nään näin paljon kommentteja
+
+            Console.WriteLine(" \n** Get pairs for pair programming assignment ** \n\n"); 
+
+            Console.WriteLine(" \n** Get pairs for pair programming assignment ** \n\n"); //Lasselta kommentti moro vaan
+
+            //To-do: If file isn't found, throw exception
+            
 
             string path = @"C:\Files\List.txt";
             var names = ReadFile(path);
@@ -20,14 +26,14 @@ namespace PairGenerator
             if (names != null) { 
                 string[] randomNames = ListPairs(names);
 
-                await WriteResultsFile(randomNames, path);
-            }
+                await WriteResultsFile(names, path);
+            }//on siis hyvä muistaa, että kun on git pullia tehnyt, niin muistaa refresh painaa myös täällä visual studion puolella, niin voisi jotain saada näkyviin :)
         }
 
         public static string[] ListPairs(string[] names)
         {
             if (names != null)
-            {
+            {//BÖÖÖ t. LauraR
                 Random r = new Random();
                 names = names.OrderBy(x => r.Next()).ToArray();
 
@@ -54,22 +60,24 @@ namespace PairGenerator
 
                 if (lines.Length == 0)
                 {
-                    Console.WriteLine("Error: No names in file");
+                    //Console.WriteLine("Error: No names in file");
+                    Console.WriteLine("Error: Nothing was found!"); //TÄSSÄ ANNA V. MUUTOKSET.
                     return null;
                 }
                 return lines;
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error: File not found ");
+                //Console.WriteLine("Error: File not found ");
+                Console.WriteLine("Error: CThere is no such file!"); //TÄSSÄ ANNA V. MUUTOKSET.
                 return null;
             }
         }
-
+        //Tosi mitätön muutos
 
         public static async Task WriteResultsFile(string[] names, string path)
         {
-            //todo: write separate files
+            
             await File.WriteAllLinesAsync(path, names);
         }
     }
