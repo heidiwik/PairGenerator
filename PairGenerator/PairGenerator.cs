@@ -12,9 +12,12 @@ namespace PairGenerator
         {
             Console.WriteLine(" \n** Get pairs for pair programming assignment ** \n\n"); //Lasselta kommentti moro vaan
 
+            //To-do: If file isn't found, throw exception
+
             string path = @"C:\Files\List.txt";
             var names = ReadFile(path);
 
+            
             if (names != null) { 
                 string[] randomNames = ListPairs(names);
 
@@ -67,6 +70,7 @@ namespace PairGenerator
 
         public static async Task WriteResultsFile(string[] names, string path)
         {
+            //todo: write separate files
             await File.WriteAllLinesAsync(path, names);
         }
     }
