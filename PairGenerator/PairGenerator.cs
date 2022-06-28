@@ -9,13 +9,14 @@ namespace PairGenerator
     class PairGenerator
     {
         static async Task Main(string[] args)
-        {
+        { // miten mä nään näin paljon kommentteja
 
             Console.WriteLine(" \n** Get pairs for pair programming assignment ** \n\n"); 
 
             Console.WriteLine(" \n** Get pairs for pair programming assignment ** \n\n"); //Lasselta kommentti moro vaan
 
             //To-do: If file isn't found, throw exception
+            
 
 
             string path = @"C:\Files\List.txt";
@@ -26,13 +27,13 @@ namespace PairGenerator
                 string[] randomNames = ListPairs(names);
 
                 await WriteResultsFile(names, path);
-            }
+            }//on siis hyvä muistaa, että kun on git pullia tehnyt, niin muistaa refresh painaa myös täällä visual studion puolella, niin voisi jotain saada näkyviin :)
         }
 
         public static string[] ListPairs(string[] names)
         {
             if (names != null)
-            {
+            {//BÖÖÖ t. LauraR
                 Random r = new Random();
                 names = names.OrderBy(x => r.Next()).ToArray();
 
@@ -72,11 +73,11 @@ namespace PairGenerator
                 return null;
             }
         }
-
+        //Tosi mitätön muutos
 
         public static async Task WriteResultsFile(string[] names, string path)
         {
-            //todo: write separate files
+            
             await File.WriteAllLinesAsync(path, names);
             //Console.WriteLine("Error: File not found ");-AKN
         }
