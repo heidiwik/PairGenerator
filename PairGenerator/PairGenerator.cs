@@ -10,7 +10,7 @@ namespace PairGenerator
     {
         static async Task Main(string[] args)
         {
-            Console.WriteLine(" \n** Get pairs for pair programming assignment ** \n\n");
+            Console.WriteLine(" \n** Get pairs for pair programming assignment ** \n\n"); //Lasselta kommentti moro vaan
 
             string path = @"C:\Files\List.txt";
             var names = ReadFile(path);
@@ -18,7 +18,7 @@ namespace PairGenerator
             if (names != null) { 
                 string[] randomNames = ListPairs(names);
 
-                await WriteResultsFile(names, randomNames);
+                await WriteResultsFile(names, path);
             }
         }
 
