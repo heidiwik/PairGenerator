@@ -20,7 +20,6 @@ namespace PairGenerator
 
                 await WriteResultsFile(names, randomNames);
             }
-
         }
 
         public static string[] ListPairs(string[] names)
@@ -64,6 +63,7 @@ namespace PairGenerator
                 return null;
             }
         }
+
 
         public static async Task WriteResultsFile(string[] names, string path)
         {
