@@ -16,6 +16,7 @@ namespace PairGenerator
             Console.WriteLine(" \n** Get pairs for pair programming assignment ** \n\n"); //Lasselta kommentti moro vaan
 
             //To-do: If file isn't found, throw exception
+            
 
 
             string path = @"C:\Files\List.txt";
@@ -32,7 +33,7 @@ namespace PairGenerator
         public static string[] ListPairs(string[] names)
         {
             if (names != null)
-            {
+            {//BÖÖÖ t. LauraR
                 Random r = new Random();
                 names = names.OrderBy(x => r.Next()).ToArray();
 
