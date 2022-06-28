@@ -15,14 +15,15 @@ namespace PairGenerator
             string path = @"C:\Files\List.txt";
             var names = ReadFile(path);
 
-            if (names != null)
-                ListPairs(names);
+            if (names != null) { 
+                string[] randomNames = ListPairs(names);
 
-            await WriteResultsFile(names, path);
+                await WriteResultsFile(names, randomNames);
+            }
 
         }
 
-        public static void ListPairs(string[] names)
+        public static string[] ListPairs(string[] names)
         {
             if (names != null)
             {
@@ -40,6 +41,8 @@ namespace PairGenerator
                     Console.WriteLine("");
                 }
             }
+
+            return names;
        }
 
         public static string[] ReadFile(string fileName)
@@ -62,9 +65,9 @@ namespace PairGenerator
             }
         }
 
-        public static async Task WriteResultsFile(string[] names, string fileName)
+        public static async Task WriteResultsFile(string[] names, string path)
         {
-            await File.WriteAllLinesAsync(fileName, names);
+            await File.WriteAllLinesAsync(path, names);
         }
     }
 }
