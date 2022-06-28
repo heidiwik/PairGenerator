@@ -18,7 +18,7 @@ namespace PairGenerator
             if (names != null)
                 ListPairs(names);
 
-            await WriteResultsFile(names, path);
+            bool result = await WriteStuff(names, path);
 
         }
 
@@ -62,9 +62,11 @@ namespace PairGenerator
             }
         }
 
-        public static async Task WriteResultsFile(string[] names, string fileName)
+        public static bool WriteStuff(string[] names, string fileName)
         {
-            await File.WriteAllLinesAsync(fileName, names);
+            await File.WriteAllLines(fileName, names);
+            
+            return true;
         }
     }
 }
