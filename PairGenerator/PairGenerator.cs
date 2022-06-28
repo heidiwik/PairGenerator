@@ -9,7 +9,7 @@ namespace PairGenerator
     class PairGenerator
     {
         static async Task Main(string[] args)
-        {
+        { // miten mä nään näin paljon kommentteja
 
             Console.WriteLine(" \n** Get pairs for pair programming assignment ** \n\n"); 
 
@@ -73,11 +73,11 @@ namespace PairGenerator
                 return null;
             }
         }
-
+        //Tosi mitätön muutos
 
         public static async Task WriteResultsFile(string[] names, string path)
         {
-            //todo: write separate files
+            
             await File.WriteAllLinesAsync(path, names);
         }
     }
