@@ -10,14 +10,12 @@ namespace PairGenerator
     {
         static async Task Main(string[] args)
 
-        { // miten mä nään näin paljon kommentteja
+        { //Removed comments for maria branch
 
             Console.WriteLine(" \n** Get pairs for pair programming assignment ** \n\n"); 
 
-            Console.WriteLine(" \n** Get pairs for pair programming assignment ** \n\n"); //Lasselta kommentti moro vaan
-
-           
-            
+            Console.WriteLine(" \n** Get pairs for pair programming assignment ** \n\n"); 
+    
 
             string path = @"C:\Files\List.txt";
             var names = ReadFile(path);
@@ -27,7 +25,7 @@ namespace PairGenerator
                 string[] randomNames = ListPairs(names);
 
                 await WriteResultsFile(names, path);
-            }//on siis hyvä muistaa, että kun on git pullia tehnyt, niin muistaa refresh painaa myös täällä visual studion puolella, niin voisi jotain saada näkyviin :)
+            }
 
             JustForLaughs();
 
@@ -39,7 +37,7 @@ namespace PairGenerator
         public static string[] ListPairs(string[] names)
         {
             if (names != null)
-            {//BÖÖÖ t. LauraR
+            {
                 Random r = new Random();
                 names = names.OrderBy(x => r.Next()).ToArray();
 
@@ -66,7 +64,7 @@ namespace PairGenerator
 
                 if (lines.Length == 0)
                 {
-                    //Console.WriteLine("Error: No names in file");
+                  
                     Console.WriteLine("Error: Nothing was found!"); //TÄSSÄ ANNA V. MUUTOKSET.
                     return null;
                 }
@@ -74,21 +72,26 @@ namespace PairGenerator
             }
             catch (Exception e)
             {
-                //Console.WriteLine("Error: File not found ");
-                Console.WriteLine("Error: CThere is no such file!"); //TÄSSÄ ANNA V. MUUTOKSET.
+                
+                Console.WriteLine("Error: There is no such file!"); 
                 return null;
             }
         }
-        //Tosi mitätön muutos
+     
 
         public static async Task WriteResultsFile(string[] names, string path)
         {
             
             await File.WriteAllLinesAsync(path, names);
-            //Console.WriteLine("Error: File not found ");-AKN
+          
         }
 
         public static void JustForLaughs()
+        {
+            Console.WriteLine("Testing GIT functionalities is a thrilling task!"); //MARIA TESTAA
+        }
+
+        public static void JustForTestingPurposes()
         {
             Console.WriteLine("Testing GIT functionalities is a thrilling task!"); //MARIA TESTAA
         }
