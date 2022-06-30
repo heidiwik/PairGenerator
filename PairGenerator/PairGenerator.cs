@@ -16,7 +16,7 @@ namespace PairGenerator
 
             Console.WriteLine(" \n** Get pairs for pair programming assignment ** \n\n"); //Lasselta kommentti moro vaan
 
-            //To-do: If file isn't found, throw exception
+           
             
 
             string path = @"C:\Files\List.txt";
@@ -28,7 +28,13 @@ namespace PairGenerator
 
                 await WriteResultsFile(names, path);
             }//on siis hyvä muistaa, että kun on git pullia tehnyt, niin muistaa refresh painaa myös täällä visual studion puolella, niin voisi jotain saada näkyviin :)
+
+            JustForLaughs();
+
+
         }
+
+
 
         public static string[] ListPairs(string[] names)
         {
@@ -80,6 +86,11 @@ namespace PairGenerator
             
             await File.WriteAllLinesAsync(path, names);
             //Console.WriteLine("Error: File not found ");-AKN
+        }
+
+        public static void JustForLaughs()
+        {
+            Console.WriteLine("Testing GIT functionalities is a thrilling task!"); //MARIA TESTAA
         }
     }
 }
